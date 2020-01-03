@@ -96,7 +96,10 @@ function handleError(error) {
 
 function errorMsg(msg, error) {
     var errorElement = document.querySelector('#errorMsg');
-    errorElement.innerHTML += `<p>${msg}</p>`;
+    if (errorElement !== null) {
+        errorElement.innerHTML += `<p>${msg}</p>`;
+    }
+    console.error('ERROR: ' + msg);
     if (typeof error !== 'undefined') {
         console.error(error);
     }
